@@ -16,11 +16,11 @@ int main(void)
 
 		k = j + 1;
 		while (k <= 57)
-		{	
+		{
 			putchar(i);
 			putchar(k);
 			k++;
-			if(i == 56)
+			if (i == 56)
 				break;
 			putchar(44);
 			putchar(32);
