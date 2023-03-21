@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
-*main - _putchar - writes the character c to stdout
-*Return: Always 0 (Success)
+* print_alphabet -  using putchar dunction - prototype methide
+* Return: void
 */
 
 void print_alphabet(void)
