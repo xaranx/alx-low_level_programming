@@ -2,58 +2,49 @@
 #include <stdio.h>
 
 /**
- * isLower - Detirmine whether the ascii is lowercase
- *@c : character
- *Return: 1 if true and 0 if false
+ * isDelimiter - determine whether the ASCII is a delimiter
+ * @c: character
+ *
+ * Return: 1 if true and 0 if false
  */
-
-int isLower(char c)
-{
-	return (c >= 97 && c <= 122);
-}
-
-/**
- *isDelimiter - determin whether the ascii is a delimiter
- *@c : character
- *Return: 1 if true and 0 if false
- */
-
 int isDelimiter(char c)
 {
 	int i;
-
-	char delimiter[] = "\t\n,.!?\"{}()";
+	char delimiters[] = " \t\n,.!?\"{}()";
 
 	for (i = 0; i < 13; i++)
 	{
-		if (c == delimiter[i])
+		if (c == delimiters[i])
 			return (1);
 	}
 	return (0);
 }
 
 /**
- * cap_string - function that capitalizes all words of a string
+ * cap_string - function that capitalizes the first character of each word
+ * @s: input string
  *
- * @s : input string
- * Return: string with capital words
+ * Return: modified string with first character of each word capitalized
  */
 char *cap_string(char *s)
 {
-	char *ptr = s;
 	int foundDelimiter = 1;
+	char *ptr = s;
 
 	while (*s)
 	{
 		if (isDelimiter(*s))
-			foundDelimiter = 1;
-		else if (isLower(*s) && foundDelimiter)
 		{
-			*s -= 32;
+			foundDelimiter = 1;
+		}
+		else if (foundDelimiter)
+		{
+			if (*s >= 'a' && *s <= 'z')
+			{
+				*s -= 32;
+			}
 			foundDelimiter = 0;
 		}
-		else
-			foundDelimiter = 0;
 		s++;
 	}
 	return (ptr);
