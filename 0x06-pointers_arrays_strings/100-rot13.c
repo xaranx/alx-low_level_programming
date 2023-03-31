@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * root13 - function that encodes a string using rot13
+ * rot13 - function that encodes a string using rot13
  *
  * @s : string to encode
  * Return: encoded string
@@ -9,11 +9,11 @@
 
 char *rot13(char *s)
 {
+	int i;
+
 	char rot13[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char ROT13[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 	char *ptr = s;
-
-	int i;
 
 	while (*s)
 	{
