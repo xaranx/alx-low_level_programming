@@ -5,7 +5,7 @@
 /**
  * malloc_checked -function that allocates memory using malloc
  * @b: int
- *  Return: void
+ *  Return: return pointer to the array ot NULL
  */
 
 void *malloc_checked(unsigned int b)
@@ -16,5 +16,5 @@ void *malloc_checked(unsigned int b)
 	{
 		exit(98);
 	}
-	return (0);
+	return (m);
 }
