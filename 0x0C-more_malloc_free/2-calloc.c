@@ -2,21 +2,23 @@
 #include <stdlib.h>
 
 /**
- * _memset - fills memory with a constant byte
- * @s: pointer
- * @b: constant
- * @n: max bytes to use
- *  Return: s
+ * _bzero - fills memory with a constant byte
+ * @dst: pointer
+ * @size: of the memory
+ *  Return: pointer to memory
  */
 
-char *_memset(char *s, char b, unsigned int n)
+void *_bzero(void *dst, unsigned int size)
 {
-	char *ptr = s;
+	char *d = dst;
 
-	while (n--)
-		*s++ = b;
-	return (ptr);
+	do
+		* d++ = 0;
+	while (--size != 0);
+
+	return (d);
 }
+
 
 
 /**
@@ -27,13 +29,15 @@ char *_memset(char *s, char b, unsigned int n)
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	void *m;
+	void *ptr;
 
-	if (size == 0 || nmemb == 0)
+	if (!nmemb || !size)
 		return (NULL);
-	m = malloc(sizeof(int) * nmemb);
-	if (m == 0)
+	ptr = malloc(nmemb * size);
+	if (!ptr)
 		return (NULL);
-	_memset(m, 0, sizeof(int) * nmemb);
-	return (m);
+
+	_bzero(ptr, nmemb * size);
+	return (ptr);
+
 }
