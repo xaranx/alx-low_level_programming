@@ -12,20 +12,16 @@ int _strlen(char *s)
 	int i = 0;
 
 	if (!s)
-	{
 		return (0);
-	}
 	while (*s++)
-	{
 		i++;
-	}
 	return (i);
 }
 
 /**
  * print_list - prints a lists
  *@h: pointero first node
- * Return: intger size of node
+ * Return:size of list
  */
 
 
