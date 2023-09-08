@@ -1,7 +1,6 @@
 #include "hash_tables.h"
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+
+
 /**
  * hash_table_create - Creates a hash table.
  * @size: the size, in number of nodes, to make the new hash table.
@@ -12,10 +11,9 @@
 
 hash_table_t *hash_table_create(unsigned long int size)
 {
-	hash_table_t *ptr;
 	unsigned int i = 0;
+	hash_table_t *ptr = malloc(sizeof(hash_table_t));
 
-	ptr = malloc(sizeof(hash_table_t));
 	if (ptr == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
