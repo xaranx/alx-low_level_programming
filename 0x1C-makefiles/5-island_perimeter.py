@@ -1,8 +1,10 @@
 #!/usr/bin/python3
+""" Module that returns the perimiter of an island"""
 
 
 def num_water_neighbors(grid, i, j):
-    
+    """ return the number of water a cell has in a grid"""
+
     num = 0
 
     if i <= 0 or not grid[i - 1][j]:
@@ -18,7 +20,7 @@ def num_water_neighbors(grid, i, j):
 
 
 def island_perimeter(grid):
-    
+    """return the perim of the island in grid"""
     perim = 0
     for i in range(len(grid)):
         for j in range(len(grid[i])):
